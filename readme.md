@@ -2,7 +2,7 @@
 ### BUY - https://www.tindie.com/products/28875/
 
 ## Description
-ESP32 based board for addressable LED control in 3D printer enclosures, audio-visual racks, and computer/networking racks. This ESP32 board features, the powerful ESP-WROOM-32E module, with integrated WiFi and Bluetooth functionality (BR/EDR/BLE). The ESP32 is a chip designed with TSMC ultra-low power management technology. The proven ESP32-D0WD-V3 chip is located in the core of the developed module. This board has a USB-C interface for download of firmware and power during development. The board is flashed with an ESPHome image to allow immediate inclusion onto your WiFi network and OTA programming. It also has headers that allow use with conventional D1 Mini style daughter boards and is therefore pin compatible with most accessories. The board has a JST SH connector with I2C and selectable (3.3/5V) power and ground compatible with Adafruit's STEMMA QT/ Sparkfun Qwiic sensors. With optional JST SH to JST PH cable, it also supports STEMMA and Grove interfaces This board also has four Molex KK (PC fan style) that has one 5v driven output, one 5v tolerant input, in addition to fan (typ. 12v) power and ground for 4+ amps per connector and up to 10 amps for all four connectors. It also has three, 2-pin screw connector for one-wire devices, each with 3.3v power and ground.
+ESP32 based board for addressable LED control in 3D printer enclosures, audio-visual racks, and computer/networking racks. This ESP32 board features, the powerful ESP-WROOM-32E module, with integrated WiFi and Bluetooth functionality (BR/EDR/BLE). The ESP32 is a chip designed with TSMC ultra-low power management technology. The proven ESP32-D0WD-V3 chip is located in the core of the developed module. This board has a USB-C interface for download of firmware and power during development. The board is flashed with an ESPHome image to allow immediate inclusion onto your WiFi network and OTA programming. It also has headers that allow use with conventional D1 Mini style daughter boards and is therefore pin compatible with most accessories. The board has a JST SH connector for I2C, I2S, or  and selectable (3.3/5V) power and ground compatible with Adafruit's STEMMA QT/ Sparkfun Qwiic. With optional JST SH to JST PH cable, it also supports STEMMA and Grove interfaces. This board also has four Molex KK (PC fan style) that has one 5v driven output, one 5v tolerant input (not needed) , in addition to power and ground for 4+ amps per connector and up to 10 amps for all four connectors. It also has three, 2-pin screw connector for One-Wire devices, each with 3.3v power and ground.
 
 <img src="DesignFiles/3D_top_3_2.jpg" width=400> <img src="DesignFiles/3D_bot_3_2.jpg" width=400>
 
@@ -13,7 +13,7 @@ ESP32 based board for addressable LED control in 3D printer enclosures, audio-vi
 * Power Input: 12v @ 10 amps max via 5.5mm x 2.1/2.5mm barrel connector or 5v via USB-C connector.
 * 10 amp resettable fused input power.
 * On Board Regulation: 5v @ 2 amps switching regulator, 3.3v @ 1.0 amp.
-* Input/Output: One 5v tolerant input (1k pullup) and one 5v driven output, with 12V power (4+ amps per conn.) and ground on four, four-pin Molex KK series connectors. Compatible with most PWM PC style fans with speed return. Of course other use cases for these interfaces such as driving LED strings are available.
+* Input/Output: One 5v tolerant input (1k pullup) and one 5v driven output, with 12V power (4+ amps per conn.) and ground on four, four-pin Molex KK series connectors.  Adaptor cable is included to drive
 * I/O: Three screw down three position headers with common one-wire interface as well as 3.3v power and ground.
 * I/O: USB 2.0 via USB-C connector using the CP2102N.
 * I/O: Standard WEMOS daughter interface on two 1x8 pin headers.
@@ -24,30 +24,29 @@ A 3D printed enclosure is also available: https://www.tindie.com/products/29364/
 
 ## Setup and Configuration
 
-* DO NOT ATTEMPT TO POWER FANS FROM USB-C. Supplied power (5v-14V) to barrel connector
-needs to match the voltage of the PWM fan (or other device) you are driving. 
+* DO NOT ATTEMPT TO POWER 5 VOLT  LEDS FROM USB-C. Supplied LED power (5v-14V) needs to 
+be connected barrel connector and needs to match the voltage of the
+LEDS (or other device) you are powering
 
-* To place on WiFi network use 2.4G phone to connect to "AVFAN1 Fallback Hotspot" and
-update SSID and PASSWORD. Once connected to your WiFi network, to access the webpage of
-the device browse to http://avfan1.local
+* Device is flashed with the WLED. To place on 
+WiFi network use 2.4G phone to connect to "WLED-AP" and default WLED password. . Once connected to your WiFi network, to access the webpage of
+the device browse to http://wledecb.local.  WiFi credentials can aslo be set using the  WLED Web
+Flasher https://install.wled.me/
 
-* Device is flashed with an exmaple ESPhome binary image that has manual control over fans 
-and automatic control which can be enabled based the target temperature setting.  Four temperature
-sensors control each of the four PWM fan connectors.
-Flashed binary image  has "api:" disabled, MQTT enabled.
+* If customization is needed, follow the WLED instructions for compiling your own image. Custom images are available for dual LED and 
+Dallas temperature fan control, as well as sound reactive.
 
-* For customization, downlaod the example (flashed) code from 
-https://github.com/fpovoski/ESP32-Temperature-Monitoring-PWM-Control-Board/blob/main/ESPhome/avfan1.yaml
+* URL of the board is: http://wledecb.local
+
+* Flash over USB or ethernet. To flash over USB use WLED Web Flasher https://install.wled.me/
+with the device powered and connected to your host machine.
 
 * Also update WiFi and MQTT server credentials as required.
 
-* Flash over USB or ethernet. To flash over USB use ESPhome Web Flasher https://web.esphome.io/
-with the device powered and connected to your host machine.
+* For adding Wemos style boards (i.e., relay) with the case installed use the long (19mm).
 
-* For Dallas style sensors (board preprogrammed with logger level: DEBUG), to get device ID follow
-the ESPhome instructions: https://esphome.io/components/sensor/dallas.html.
-
-* For adding Wemos style boards (i.e., relay) with the case installed  use the long (19mm) provided pins.
+* WLED Quick Pin Settings - J4:GPIO13, J5:GPIO14, J6:GPIO25, J7:GPIO32, Relay:GPIO18, Dallas:GPIO27,
+   J10.PIN3(SDA): GPIO21, J10.PIN4(SCL): GPIO22
 
 ## Connector to GPIO Mapping.
 
