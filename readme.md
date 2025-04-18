@@ -2,7 +2,11 @@
 ### BUY - https://www.tindie.com/products/28875/
 
 ## Description
-ESP32 based board for addressable LED control in 3D printer enclosures, audio-visual racks, and computer/networking racks. This ESP32 board features, the powerful ESP-WROOM-32E module, with integrated WiFi and Bluetooth functionality (BR/EDR/BLE). The ESP32 is a chip designed with TSMC ultra-low power management technology. The proven ESP32-D0WD-V3 chip is located in the core of the developed module. This board has a USB-C interface for download of firmware and power during development. The board is flashed with an ESPHome image to allow immediate inclusion onto your WiFi network and OTA programming. It also has headers that allow use with conventional D1 Mini style daughter boards and is therefore pin compatible with most accessories. The board has a JST SH connector for I2C, I2S, or  and selectable (3.3/5V) power and ground compatible with Adafruit's STEMMA QT/ Sparkfun Qwiic. With optional JST SH to JST PH cable, it also supports STEMMA and Grove interfaces. This board also has four Molex KK (PC fan style) that has one 5v driven output, one 5v tolerant input (not needed) , in addition to power and ground for 4+ amps per connector and up to 10 amps for all four connectors. It also has three, 2-pin screw connector for One-Wire devices, each with 3.3v power and ground.
+ESP32 based board for addressable LED control in 3D printer enclosures, audio-visual racks, and computer/networking racks. This ESP32 board features, the powerful ESP-WROOM-32E module, with integrated WiFi and Bluetooth functionality (BR/EDR/BLE). The ESP32 is a chip designed with TSMC ultra-low power management technology. The proven ESP32-D0WD-V3 chip is located in the core of the developed module.
+
+This board has a USB-C interface for download of firmware and power during development. The board is flashed with an ESPHome image to allow immediate inclusion onto your WiFi network and OTA programming. It also has headers that allow use with conventional D1 Mini style daughter boards and is therefore pin compatible with most accessories. The board has a JST SH connector for I2C, I2S, or  and selectable (3.3/5V) power and ground compatible with Adafruit's STEMMA QT/ Sparkfun Qwiic. With optional JST SH to JST PH cable, it also supports STEMMA and Grove interfaces. 
+
+This board also has four Molex KK (PC fan style) that has one 5v driven output, one 5v tolerant input (not needed) , in addition to power and ground for 4+ amps per connector and up to 10 amps for all four connectors. It also has three, 2-pin screw connector for One-Wire devices, each with 3.3v power and ground.
 
 <img src="DesignFiles/3D_top_3_2.jpg" width=400> <img src="DesignFiles/3D_bot_3_2.jpg" width=400>
 
@@ -12,7 +16,8 @@ ESP32 based board for addressable LED control in 3D printer enclosures, audio-vi
 * Processor: ESP32 on ESP32-WROOM-E module with WiFi and BT V4.2
 * Power Input: 12v @ 10 amps max via 5.5mm x 2.1/2.5mm barrel connector or 5v via USB-C connector.
 * 10 amp resettable fused input power.
-* On Board Regulation: 5v @ 2 amps switching regulator, 3.3v @ 1.0 amp.
+* Onboard regulation: 5v @ 2 amps switching regulator, 3.3v @ 1.0 amp.
+* Onboard tempeature sensor.
 * Input/Output: One 5v tolerant input (1k pullup) and one 5v driven output, with 12V power (4+ amps per conn.) and ground on four, four-pin Molex KK series connectors.  Adaptor cable is included to drive
 * I/O: Three screw down three position headers with common one-wire interface as well as 3.3v power and ground.
 * I/O: USB 2.0 via USB-C connector using the CP2102N.
@@ -113,5 +118,4 @@ with the device powered and connected to your host machine.
 | P1 | +5V | GND | IO16 | IO17 | IO21 | IO22 | RXD/IO03 | TXD/IO01 |
 | P2 | +3.3V | IO05 | IO23| IO19 | IO18 | IO26 | IO36 | EN |
 
-## Customer Created Projects Utilizing The ECB
-Ando Roots: https://www.printables.com/model/702072-1u-rack-fan-shelf
+
